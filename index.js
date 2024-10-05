@@ -1,23 +1,23 @@
 class Pokemon {
 	constructor() {
-		this.nombre = "POKÉMON " + Math.floor(Math.random() * 101)
+		this._nombre = "POKÉMON " + Math.floor(Math.random() * 101)
 	}
 
 	describir() {
 		[
 			'.............................................',
 			"Estas mirando un Pokémon:                    ",
-			`   Este Pokémon se llama:   ${this.nombre}   `,
+			`   Este Pokémon se llama:   ${this._nombre}   `,
 			"============================================="
 		].forEach(linea => console.log(linea))
 	}
 
 	get nombre() {
-		return `POKEMON: ${this.nombre}]`
+		return `POKEMON: ${this._nombre}]`
 	}
 
 	set nombre(nombre) {
-		this.nombre = "RENAMED: " + nombre
+		this._nombre = "RENAMED: " + nombre
 	}
 }
 
