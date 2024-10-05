@@ -19,13 +19,9 @@ class Pokemon {
 }
 
 class PokemonFuego extends Pokemon {
-    // Extiende el Pokemon. los pokemons normalmente no pueden quemar
-    quemar() {
-        console.log(`El pokemon ${this.nombre} (${this.id}) está que arde`)
-    }
-
     // Sobrecarga el ataque => los poquemons de fuego queman al acerecarse
     atacar() {
+        super.atacar()
         console.log(`${this.nombre} quemó al enemigo`)
     }
 }
@@ -66,20 +62,19 @@ class Pokedex {
 }
 
 let myDragoncito = new PokemonFuego("Charizard")
- myDragoncito.describir()
- myDragoncito.atacar()
- myDragoncito.quemar()
- console.log("")
- console.log("")
- miTortugita = new Pokemon("Squirtel")
- miTortugita.describir()
- miTortugita.atacar()
- // miTortugita.quemar() // Torugita no puede quemar por que no es de tipo fuego
- console.log("")
- console.log("")
- miPsi = new PokemonPsi()
- miPsi.describir()
- miPsi.atacar()
+myDragoncito.describir()
+myDragoncito.atacar()
+console.log("")
+console.log("")
+miTortugita = new Pokemon("Squirtel")
+miTortugita.describir()
+miTortugita.atacar()
+// miTortugita.quemar() // Torugita no puede quemar por que no es de tipo fuego
+console.log("")
+console.log("")
+miPsi = new PokemonPsi()
+miPsi.describir()
+miPsi.atacar()
 
 miPsiloko = new PokemonPsi("LokoMon", "Enloquece")
 miPsiloko.describir()
