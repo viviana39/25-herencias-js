@@ -13,7 +13,7 @@ class Pokemon {
 	}
 
 	get nombre() {
-		return `POKEMON: ${this._nombre}]`
+		return `POKEMON: [${this._nombre}]`
 	}
 
 	set nombre(nombre) {
