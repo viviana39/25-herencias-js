@@ -17,6 +17,8 @@ class Pokemon {
 class Pokedex {
     constructor(color = "SIN_COLOR") {
         this.color = color
+
+        // COMPOSICION: El objeto Pokedex se forma de objertos Pokemon
         this.pokediccionario = [
             new Pokemon("Charmander"), // pos: 0
             new Pokemon("Bulbasaur"),  // pos: 1
