@@ -1,37 +1,35 @@
 class Pokemon {
-	constructor() {
-		this._nombre = "POKÉMON " + Math.floor(Math.random() * 101)
+	constructor(nombre = "Pacomon") {
+		this.id = Math.floor(Math.random() * 10000000001)
+		this.nombre = nombre
 	}
 
 	describir() {
 		[
 			'.............................................',
-			"Estas mirando un Pokémon:                    ",
-			`   Este Pokémon se llama:   ${this._nombre}   `,
+			`Estas mirando el Pokémon:   ${this.id}       `,
+			`   Este Pokémon se llama:   ${this.nombre}   `,
 			"============================================="
 		].forEach(linea => console.log(linea))
 	}
-
-	get nombre() {
-		return `POKEMON: [${this._nombre}]`
-	}
-
-	set nombre(nombre) {
-		this._nombre = "RENAMED: " + nombre
-	}
 }
 
-const pokemon1 = new Pokemon()
- const pokemon2 = new Pokemon()
- const pokemon3 = new Pokemon()
- const pokemon4 = new Pokemon()
+const pokemon1 = new Pokemon("Charmander")
+const pokemon2 = new Pokemon("Bulbasaur")
+const pokemon3 = new Pokemon()
+const pokemon4 = new Pokemon()
 
 // pokemon3.describir()
+pokemon1.describir()
 pokemon2.describir()
+pokemon3.describir()
+pokemon4.describir()
 
 console.log(pokemon1.nombre)
+console.log(pokemon3.nombre)
+console.log(pokemon4.nombre)
 console.log(pokemon4.nombre)
 
-pokemon1.nombre = "Paco"
+pokemon1.nombre = "Michi"
 console.log(pokemon1.nombre)
 pokemon1.describir()
