@@ -1,35 +1,45 @@
 class Pokemon {
-	constructor(nombre = "Pacomon") {
-		this.id = Math.floor(Math.random() * 10000000001)
-		this.nombre = nombre
-	}
+    constructor(nombre = "Pacomon") {
+        this.id = Math.floor(Math.random() * 10000000001)
+        this.nombre = nombre
+    }
 
-	describir() {
-		[
-			'.............................................',
-			`Estas mirando el Pokémon:   ${this.id}       `,
-			`   Este Pokémon se llama:   ${this.nombre}   `,
-			"============================================="
-		].forEach(linea => console.log(linea))
-	}
+    describir() {
+        [
+            '.............................................',
+            `Estas mirando el Pokémon:   ${this.id}       `,
+            `   Este Pokémon se llama:   ${this.nombre}   `,
+            "============================================="
+        ].forEach(linea => console.log(linea))
+    }
 }
 
-const pokemon1 = new Pokemon("Charmander")
-const pokemon2 = new Pokemon("Bulbasaur")
-const pokemon3 = new Pokemon()
-const pokemon4 = new Pokemon()
+class Pokedex {
+    constructor(color = "SIN_COLOR") {
+        this.color = color
+        this.pokediccionario = [
+            new Pokemon("Charmander"), // pos: 0
+            new Pokemon("Bulbasaur"),  // pos: 1
+            new Pokemon(),             // pos: 2
+            new Pokemon(),             // pos: 3
+        ]
 
-// pokemon3.describir()
-pokemon1.describir()
-pokemon2.describir()
-pokemon3.describir()
-pokemon4.describir()
+        console.log("NUEVA Pokedex CREADA:")
+        this.listar()
+    }
 
-console.log(pokemon1.nombre)
-console.log(pokemon3.nombre)
-console.log(pokemon4.nombre)
-console.log(pokemon4.nombre)
+    listar() {
+        console.log("    POKEDEX: " + this.color)
+        this.pokediccionario.forEach(pokemon => pokemon.describir())
+    }
+}
 
-pokemon1.nombre = "Michi"
-console.log(pokemon1.nombre)
-pokemon1.describir()
+
+const miLibroAzul = new Pokedex("azul")
+const miLibroRosita = new Pokedex("rosa")
+miLibroAzul.pokediccionario[2].nombre = "Pikachu"
+miLibroRosita.pokediccionario[2].nombre = "Squirtle"
+
+console.log("********************************************")
+miLibroAzul.listar()
+miLibroRosita.listar()
